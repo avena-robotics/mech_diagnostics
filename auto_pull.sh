@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /home/ubuntu/joint_diagnostic
+cd /home/pi/mech_diagnostics
 ./git_pull.sh
