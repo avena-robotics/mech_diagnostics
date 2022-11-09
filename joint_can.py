@@ -78,3 +78,10 @@ def get_register_value_from_joint(bus, id, register):
     data = [register, 2]
     msg = send_msg(0x120 + id, data, bus)
     return msg
+
+def get_can_id(bus):
+    msg = send_msg(0x020, [64, 1], bus)
+    data = msg.data
+    # print(msg)
+    reg_value = data[2]
+    return reg_value
