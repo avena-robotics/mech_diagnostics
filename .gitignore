@@ -1,5 +1,8 @@
 # Ignore everything
-*
+arm_firmware/
+arm_tools/
+diagnostic_data/
+friction_data/
 
 !.gitignore
 !*.sh
