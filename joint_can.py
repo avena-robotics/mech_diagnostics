@@ -16,7 +16,7 @@ class JointData():
     motor_temp=0
     
 def send_msg(adr, data, bus):
-    msg = can.Message(arbitration_id=adr, data=data, is_fd=False, is_extended_id=False)
+    msg = can.Message(arbitration_id=adr, data=data, is_fd=True, is_extended_id=False)
     try:
         bus.send(msg,1)
         # print(f"Message sent on {bus.channel_info}")

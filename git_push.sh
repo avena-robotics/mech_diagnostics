@@ -2,5 +2,5 @@
 git status
 git fetch
 git add *.ipynb
-git commit -m "Dodo zmiany"
+git commit -m "aktualizacja kalibracji"
 git push -f
