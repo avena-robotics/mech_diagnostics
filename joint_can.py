@@ -18,7 +18,7 @@ class JointData():
 def send_msg(adr, data, bus):
     msg = can.Message(arbitration_id=adr, data=data, is_fd=True, is_extended_id=False)
     try:
-        bus.send(msg,1)
+        bus.send(msg, 1)
         # print(f"Message sent on {bus.channel_info}")
     except can.CanError:
         print("Message NOT sent")
@@ -69,8 +69,15 @@ def set_speed(speed,bus,id):
     msg = send_msg(0x100 + id,speed_data_b, bus)
     return get_data(msg) 
 
+# def set_torque(torque,bus,id):
+#     torque_data=(int)(torque*32767/360)
+#     torque_data_b=torque_data.to_bytes(2,'little',signed=True)
+#     torque_data=torque_data.to_bytes(2,'little',signed=True)
+#     return get_data(msg)
+
 def set_torque(torque,bus,id):
     torque_data=(int)(torque*32767/360)
+    # torque_data_b=torque_data.to_bytes(2,'little',signed=True)
     torque_data=torque_data.to_bytes(2,'little',signed=True)
     return get_data(send_msg(0x100 + id,torque_data,bus))
 
